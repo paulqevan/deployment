@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from joblib import load
-
+from fastapi.middleware.cors import CORSMiddleware
 from app.schemas import DiabetesFeatures, PredictionOut
 
 MODEL_PATH = Path("model/model.joblib")
@@ -37,6 +37,14 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Diabetes ML API", version="1.0.0", lifespan=lifespan)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://paulqevan.github.io"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 
 @app.get("/health")
@@ -63,7 +71,6 @@ def get_metadata():
 
 
 
-@app.post("/predict", response_model=PredictionOut)
 @app.post("/predict", response_model=PredictionOut)
 def predict(payload: DiabetesFeatures):
     if model is None:
