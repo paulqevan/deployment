@@ -44,6 +44,25 @@ def health():
     return {"status": "ok"}
 
 
+@app.get("/")
+def root():
+    return {
+        "message": "Diabetes Prediction API (RandomForest + FastAPI + Docker)",
+        "endpoints": {
+            "docs": "/docs",
+            "health": "/health",
+            "predict": "/predict",
+            "metadata": "/metadata",
+        },
+    }
+
+
+@app.get("/metadata")
+def get_metadata():
+    return metadata
+
+
+
 @app.post("/predict", response_model=PredictionOut)
 @app.post("/predict", response_model=PredictionOut)
 def predict(payload: DiabetesFeatures):
