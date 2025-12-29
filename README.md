@@ -1,9 +1,14 @@
+![CI](https://github.com/paulqevan/deployment/actions/workflows/ci.yml/badge.svg)
+
+
 ## Live API
 Base URL: https://deployment-buhj.onrender.com
 
 - Docs: https://deployment-buhj.onrender.com/docs
 - Health: GET /health
 - Predict: POST /predict
+- Metadata: GET /metadata
+
 
 ### Example
 ```bash
