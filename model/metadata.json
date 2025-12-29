@@ -1,0 +1,29 @@
+{
+  "dataset_csv": "data/raw/diabetes.csv",
+  "model_type": "RandomForestClassifier",
+  "threshold": 0.5,
+  "features": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "metrics": {
+    "accuracy": 0.7727272727272727,
+    "roc_auc": 0.8253703703703704,
+    "confusion_matrix": [
+      [
+        85,
+        15
+      ],
+      [
+        20,
+        34
+      ]
+    ]
+  }
+}
