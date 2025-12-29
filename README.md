@@ -1,6 +1,11 @@
 ![CI](https://github.com/paulqevan/deployment/actions/workflows/ci.yml/badge.svg)
 
 
+## Live demo 
+https://paulqevan.github.io/deployment/
+
+
+
 ## Live API
 Base URL: https://deployment-buhj.onrender.com
 
