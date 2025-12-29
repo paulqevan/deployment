@@ -56,3 +56,15 @@ def predict(payload: DiabetesFeatures):
         threshold=threshold,
         model=str(metadata.get("model_type", "RandomForestClassifier")),
     )
+
+@app.get("/")
+def root():
+    return {
+        "message": "Diabetes Prediction API (RandomForest + FastAPI + Docker)",
+        "endpoints": {
+            "docs": "/docs",
+            "health": "/health",
+            "predict": "/predict",
+        },
+    }
+
